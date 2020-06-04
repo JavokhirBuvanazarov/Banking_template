@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="images/phone.png">
+    <style type="text/css">
+    	@import url(//fonts.googleapis.com/css?family=Vibur);
+html,body{
+  height:100%
+}
+body {
+  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg)  center no-repeat;
+  background-size:cover;
+  margin:0
+}
+.logo {
+	font-size: 27px;
+  text-align: center;
+  width: 100px;
+  height: 70px;
+   user-select: none;
+
+}
+
+.logo b{
+  font: 70px "Vibur";
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+}
+.logo b span{
+  animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2){
+  animation: blink linear infinite 3s;
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #333;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+
+/* follow me @nodws */
+#btn-twtr{	
+  clear:both;
+  color:#fff;
+  border:2px solid;
+  border-radius:3px;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+  font-family:sans-serif;
+  font-size:14px;
+  width:13em;
+  padding:5px 10px;
+  font-weight:600;
+  position:absolute;
+  bottom:20px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  background:rgba(0,0,0,0.2);
+  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
+  opacity:0.4
+}#btn-twtr:hover{color:#fff;opacity:1}
+
+    	input:focus,input:active{
+    		outline: none!important;
+    		box-shadow: none!important;
+    		border-color:white!important;
+    	}
+    	input{
+    		color: white!important;
+    		background: rgba(25,25,25,.2)!important;
+    		border-color:#5c5c8a!important;
+    		height: 60px!important;
+    		font-size: 24px!important;
+    	}
+    	input:active,input:focus{
+    		background: rgba(25,25,25,.8);
+    	}
+    	label{
+    		color: white;
+    		font-size: 20px;
+    		padding-top:10px;
+    	}
+
+
+    	body {
+   background: #212129;
+}
+
+::selection {
+   background: #212129;
+}
+
+.search-wrapper {
+	border: 1px solid #5c5c8a;
+	border-radius: 6px;
+	transform: translate(-50%, -50%);   
+}
+
+.search-wrapper .input-holder {    
+    height: 70px;
+    width:70px;
+    overflow: hidden;
+    background: rgba(25,25,25,.2);
+    border-radius:6px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.search-wrapper.active .input-holder {
+	border-color:1px solid red;
+    width:400px;
+    border-radius: 10px;
+    background: rgba(25,25,25,.2);
+    transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+}
+.search-wrapper .input-holder .search-input {
+    width:100%;
+    height: 50px;
+    padding:0px 70px 0 20px;
+    opacity: 0;
+    position: absolute;
+    top:0px;
+    left:0px;
+    background: transparent;
+    box-sizing: border-box;
+    border:none;
+    outline:none;
+    font-family:"Open Sans", Arial, Verdana;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color:#FFF;
+    transform: translate(0, 60px);
+    transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    transition-delay: 0.3s;
+}
+.search-wrapper.active .input-holder .search-input {
+    opacity: 1;
+    transform: translate(0, 10px);
+}
+.search-wrapper .input-holder .search-icon {
+    width:70px;
+    height:70px;
+    border:none;
+    border-radius:6px;
+    background: #FFF;
+    padding:0px;
+    outline:none;
+    position: relative;
+    z-index: 2;
+    float:right;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.search-wrapper.active .input-holder .search-icon {
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 30px;
+}
+.search-wrapper .input-holder .search-icon span {
+    width:22px;
+    height:22px;
+    display: inline-block;
+    vertical-align: middle;
+    position:relative;
+    transform: rotate(45deg);
+    transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+}
+.search-wrapper.active .input-holder .search-icon span {
+    transform: rotate(-45deg);
+}
+.search-wrapper .input-holder .search-icon span::before, .search-wrapper .input-holder .search-icon span::after {
+    position: absolute; 
+    content:'';
+}
+.search-wrapper .input-holder .search-icon span::before {
+    width: 4px;
+    height: 11px;
+    left: 9px;
+    top: 18px;
+    border-radius: 2px;
+    background: #FE5F55;
+}
+.search-wrapper .input-holder .search-icon span::after {
+    width: 14px;
+    height: 14px;
+    left: 0px;
+    top: 0px;
+    border-radius: 16px;
+    border: 4px solid #FE5F55;
+}
+.search-wrapper .close {
+    position: absolute;
+    z-index: 1;
+    top:24px;
+    right:10px;
+    width:25px;
+    height:25px;
+    cursor: pointer;
+    transform: rotate(-180deg);
+    transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+    transition-delay: 0.2s;
+}
+.search-wrapper.active .close {
+    right:-40px;
+    transform: rotate(45deg);
+    transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    transition-delay: 0.5s;
+}
+.search-wrapper .close::before, .search-wrapper .close::after {
+    position:absolute;
+    content:'';
+    background: #FE5F55;
+    border-radius: 2px;
+}
+.search-wrapper .close::before {
+    width: 5px;
+    height: 25px;
+    left: 10px;
+    top: 0px;
+}
+.search-wrapper .close::after {
+    width: 25px;
+    height: 5px;
+    left: 0px;
+    top: 10px;
+}
+.shake {
+  animation: .8s shake infinite alternate;
+}
+
+@keyframes shake {
+  0% { transform: skewX(-15deg); }
+  5% { transform: skewX(15deg); }
+  10% { transform: skewX(-15deg); }
+  15% { transform: skewX(15deg); }
+  20% { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }  
+}
+
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  	<div class="container" style="width: 500px;padding:50px;border:1px solid black;margin-top:50px;border-radius: 20px;background: linear-gradient( rgba(35,43,85,0.75), rgba(35,43,85,0.95)), url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;">
+	  	<!-- <label  style="color: white;font-size: 24px;">Telefon nomeringiz</label>
+		 <div>
+		  	<span style="position: absolute;top:240px;">
+		  		<div class="media ml-3" >
+		  			<img src="images/uzb.png" width="30" height="30">
+		  			<div class="media-body">
+		  				<span style="font-size: 24px;margin-left: 3px;color: white;"> +99</span>
+		  			</div>
+		  		</div>
+		  	</span>
+		 </div> 	
+	    <input 
+	    	type="text" 
+	    	name="phoneField" 
+	    	 
+	    	class="form-control" 
+	    	style="padding-left:92px;font-size: 20px;background: rgba(25,25,25,.2);color: white;" 
+	    	placeholder="(xxx) xxx-xx-xx" 
+	    	onkeyup="Submit()"
+
+	    > -->
+	    <div class="logo"><b>Reg<span>ist</span>rat<span>si</span>ya</b></div>
+  
+	    <div class="creative-input" style="height: 160px;">
+	    	<label  style="color: white;font-size: 20px;margin-top:10px;">Telefon raqamingiz</label>
+	    	<div style="position: absolute;top:270px;display: none;width: 150px;" id="uzb">
+			  		<div class="media ml-3" >
+			  			<img src="images/uzb.png" width="40" height="40">
+			  			<div class="media-body" style="width: 50px;">
+			  				<p style="font-size: 28px;margin-left: 3px;color: white;"> +98</p>
+			  			</div>
+			  		</div>
+			 </div>
+	    	<div class="search-wrapper" style="position: absolute;top:285px;margin-left: 200px;">
+			    <div class="input-holder">
+			        <input type="text" class="search-input" placeholder="(xxx) xxx-xx-xx" 
+	    	onkeyup="Submit()" style="padding-left: 120px;" id="phoneField" />
+			        <button class="search-icon" onclick="searchToggle(this, event);"><!-- <span></span> --><img class="shake" src="images/phone.png" width="40" height="40"></button>
+			    </div>
+			    <span class="close" onclick="searchToggle(this, event);"></span>
+			</div>
+		</div>
+	    <div class="parol" style="display: none;">	
+		    <label  style="color: white;font-size: 20px;margin-top:10px;">Parolingiz</label>
+		    <input 
+		    	type="password" 
+		    	class="form-control" 
+		    	style="" 
+		    >
+	    </div>
+	    <div class="registration">
+	    	<form>
+  			  		<label>Karta raqamingiz</label>
+			  		<input type="text" maxlength="19" class="form-control" id="card_numb" placeholder="xxxx xxxx xxxx xxxx">
+			  		<label>Amal qilish muddati</label>
+			  		<input type="text" maxlength="5" class="form-control" id="expireDate" onkeyup="dash()" placeholder="xx/xx"> 
+  						<label>Print el nomeri</label>
+			  		<input type="text" class="form-control" maxlength="14" id="printNumber" onkeyup="expire()" placeholder="xxxxxxxxxxxxxx">
+			  		<label>Pasport seriyasi</label>
+			  		<input type="text" maxlength="10" class="form-control" id="passportNumber" onkeyup="passport()">	
+  			
+  			</form>
+	    </div>
+  	</div>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    	var phoneField = document.getElementById('phoneField');
+		phoneField.addEventListener('keyup', function(){
+		  var phoneValue = phoneField.value;
+		  var output;
+		  phoneValue = phoneValue.replace(/[^0-9]/g, '');
+		    var area = phoneValue.substr(0, 3);
+		    var pre = phoneValue.substr(3, 3);
+		    var tel = phoneValue.substr(6, 4);
+		    if (area.length < 3) {
+		        output = "(" + area;
+		    } else if (area.length == 3 && pre.length < 3) {
+		        output = "(" + area + ")" + " " + pre;
+		    } else if (area.length == 3 && pre.length == 3) {
+		        output = "(" + area + ")" + " " + pre + " - "+tel;
+		    }
+		  phoneField.value = output;
+		  
+		});
+
+		function space(el, after) {
+		    // defaults to a space after 4 characters:
+		    after = after || 4;
+
+		    /* removes all characters in the value that aren't a number,
+		       or in the range from A to Z (uppercase): */
+		    var v = el.value.replace(/[^\dA-Z]/g, ''),
+		    /* creating the regular expression, to allow for the 'after' variable
+		       to be used/changed: */
+		        reg = new RegExp(".{" + after + "}","g")
+		    el.value = v.replace(reg, function (a, b, c) {
+		        return a + ' ';
+		    });
+		}
+
+		var el = document.getElementById('card_numb');
+		el.addEventListener('keyup', function () {
+		    space(this, 4);
+		});
+
+		function expire(){
+			var phoneField = document.getElementById('printNumber');
+			phoneField.addEventListener('keyup', function(){
+			  var phoneValue = phoneField.value;
+			  var output;
+			  phoneValue = phoneValue.replace(/[^0-9]/g, '');
+			    var area = phoneValue.substr(0, 14);
+			    if (area.length < 15) {
+			        output =  area;
+			    } 
+			    // } else if (area.length == 3 && pre.length < 3) {
+			    //     output = "(" + area + ")" + " " + pre;
+			    // } else if (area.length == 3 && pre.length == 3) {
+			    //     output = "(" + area + ")" + " " + pre + " - "+tel;
+			    // }
+			  phoneField.value = output;
+			  
+			});
+		}
+
+		function dash(){
+			var phoneField = document.getElementById('expireDate');
+			phoneField.addEventListener('keyup', function(){
+			  var phoneValue = phoneField.value;
+			  var output;
+			  phoneValue = phoneValue.replace(/[^0-9]/g, '');
+			    var area = phoneValue.substr(0, 2);
+			    var tel = phoneValue.substr(2, 2);
+			    if (area.length < 3) {
+			        output =  area + '/' + tel;
+			    } 
+			    // } else if (area.length == 3 && pre.length < 3) {
+			    //     output = "(" + area + ")" + " " + pre;
+			    // } else if (area.length == 3 && pre.length == 3) {
+			    //     output = "(" + area + ")" + " " + pre + " - "+tel;
+			    // }
+			  phoneField.value = output;
+			  
+			});
+		}
+
+		function passport(){
+			var passNumber = document.getElementById('passportNumber').value;
+
+			var letter = passNumber.substr(0, 2);
+			var number = passNumber.substr(2,7);
+			// letter = letter.replace(/[^a-z]/g, '');
+			// letter.style.textTransform = "uppercase";
+			number = number.replace(/[^0-9]/g, '');
+			var output;
+			if( letter.length < 3) {
+				output = letter+number;
+			} else if (letter.length < 3 && letter.length == 2){
+				output = letter + ' ' + number;
+			}
+			passportNumber.value = output;
+
+		}
+
+
+		function searchToggle(obj, evt){
+			var uzb = document.getElementById('uzb');
+		    var container = $(obj).closest('.search-wrapper');
+		        if(!container.hasClass('active')){
+		            container.addClass('active');
+		            uzb.style.display = 'block';
+		            uzb.style.zIndex = '1000';
+
+		            evt.preventDefault();
+		        }
+		        else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+		            container.removeClass('active');
+		            // clear input
+		            container.find('.search-input').val('');
+		            uzb.style.display = 'none';
+		        }
+		}
+
+    </script>
+  </body>
+</html>

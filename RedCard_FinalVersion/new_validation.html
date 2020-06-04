@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    	<!-- Required meta tags -->
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    	<!-- Bootstrap CSS -->
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    	<link rel="stylesheet" type="text/css" href="images/phone.png">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<style type="text/css">
+			* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+body 				 { background:url(https://scotch.io/wp-content/uploads/2014/07/61.jpg);background: #ededed; }
+.container 		{ 
+  font-family:'Roboto';
+  width:600px; 
+  margin:30px auto 0; 
+  display:block; 
+  background:#FFF;
+  padding:10px 50px 50px;
+  box-shadow: 
+}
+h2 		 { 
+  text-align:center; 
+  margin-bottom:50px; 
+}
+h2 small { 
+  font-weight:normal; 
+  color:#888; 
+  display:block; 
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
+
+/* form starting stylings ------------------------------- */
+.group 			  { 
+ margin-bottom:25px;
+ position: relative; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+  color:#5264AE;
+  font-size: 25px;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999; 
+  font-size:24px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:100%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+i{
+	color: #5264AE;
+	position: absolute;
+	right: 20px;
+	top:15px;
+	font-size: 26px!important; 
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+.container{
+	padding:50px;
+	/*border:1px solid #5264AE;*/
+	/*border-radius: 10px;*/
+}
+@media only screen and (max-width: 595px){
+	.container {
+		width: 90%;
+
+	}
+}
+form {
+	margin:0 auto;
+}
+
+
+.hidden, #uploadImg:not(.hidden) + label{
+	display: none;
+}
+
+#file, #file1{
+	display: none;
+  	margin: 0 auto;
+}
+
+#upload, #upload1{
+	display: block;
+	padding: 10px 25px;
+	border: 0;
+	margin: 0 auto;
+	font-size: 15px;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+	background: #5264AE;
+	color: #fff;
+	outline: none;
+	transition: .3s ease-in-out;
+	&:hover, &:focus{
+		background: #1AA39A;
+	}
+	&:active{
+		background: #13D4C8;
+		transition: .1s ease-in-out;
+	}
+}
+
+
+img{
+	display: block;
+	margin: 0 auto 15px;
+}
+		</style>
+		<div class="container">
+		  <form>
+		    <div class="group">
+		    	<i class="fa fa-phone" style="transform: rotate(270deg);display: none;"></i>
+		    	<div class="uzb" id="uzb" style="display: none;position: absolute;top:10px;margin-left: -10px;">
+			      	<div class="media ml-3" >
+				  			<img src="images/uzb.png" width="30" height="30">
+				  			<div class="media-body" style="width: 50px;">
+				  				<p style="font-size: 26px;margin-left: 3px;color:#5264AE"> +99</p>
+				  			</div>
+				  	</div>      
+		    	</div>
+		      	<input type="text" id="phoneField"  required>
+		      	<span class="highlight"></span>
+		      	<span class="bar"></span>
+		      	<label>Telefon raqamingiz</label>
+		    </div>
+		      
+		    <div class="group">
+		      	<input type="password" required>
+		      	<span class="highlight"></span>
+		      	<span class="bar"></span>
+		      	<label>Parolingiz</label>
+		    </div>
+
+		    <div class="group">
+		    	<input type="text" id="card_numb" maxlength="19" required>
+		      	<span class="highlight"></span>
+		      	<span class="bar"></span>
+		      	<label>Karta raqamingiz</label>
+		    </div>
+
+		    <div class="group">      
+		      	<input type="text" id="expireDate" onkeyup="dash()" required>
+		      	<span class="highlight"></span>
+		      	<span class="bar"></span>
+		      	<label>Amal qilish muddati</label>
+		    </div>
+
+		    <div class="group">      
+		      	<input type="text" maxlength="14" id="printNumber" onkeyup="expire()" required>
+		      	<span class="highlight"></span>
+		      	<span class="bar"></span>
+		      	<label>Printel nomeri</label>
+		    </div>
+
+		    <div class="group">      
+		      	<input type="text" id="passportNumber" onkeyup="passport()" required>
+		      	<span class="highlight"></span>
+		      	<span class="bar"></span>
+		      	<label>Passport raqami</label>
+		    </div>
+		    <div class="group">
+			    <label class="label" style="top:-15px;" for="input">Pasportingizni yuklang !</label>
+				<div class="input"><br>
+					<input name="input" id="file" type="file">
+				</div>
+		    </div>
+		    <div class="uploadedFile"></div>
+
+		    <div class="group">
+			    <label class="label" style="top:-15px;" for="input">Printelni yuklang !</label>
+				<div class="input1"><br>
+					<input name="input1" id="file1" type="file">
+				</div>
+		    </div>
+		    <div class="uploadedFile1"></div>
+		  </form>
+
+		</div>
+	</body>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		const form = document.getElementById('phoneField');
+		var phoneIcon = document.querySelector('.fa-phone');
+		var region = document.getElementById('uzb');
+		
+		form.addEventListener('focusin',(event) => {
+			event.target.placeholder = '(xxx) xxx-xxxx';
+			event.target.style.paddingLeft = '85px';
+			region.style.display = 'block';
+			phoneIcon.style.display = 'block';
+		});
+		form.addEventListener('focusout',(event) =>{
+			event.target.placeholder = '';
+			region.style.display = 'none';
+			event.target.value = '';
+			phoneIcon.style.display = 'none';
+		})
+
+		//
+
+		var phoneField = document.getElementById('phoneField');
+		phoneField.addEventListener('keyup', function(){
+		  var phoneValue = phoneField.value;
+		  var output;
+		  phoneValue = phoneValue.replace(/[^0-9]/g, '');
+		    var area = phoneValue.substr(0, 3);
+		    var pre = phoneValue.substr(3, 3);
+		    var tel = phoneValue.substr(6, 4);
+		    if (area.length < 3) {
+		        output = "(" + area;
+		    } else if (area.length == 3 && pre.length < 3) {
+		        output = "(" + area + ")" + " " + pre;
+		    } else if (area.length == 3 && pre.length == 3) {
+		        output = "(" + area + ")" + " " + pre + " - "+tel;
+		    }
+		  phoneField.value = output;
+		  
+		});
+
+
+		function space(el, after) {
+		    // defaults to a space after 4 characters:
+		    after = after || 4;
+
+		    /* removes all characters in the value that aren't a number,
+		       or in the range from A to Z (uppercase): */
+		    var v = el.value.replace(/[^\dA-Z]/g, ''),
+		    /* creating the regular expression, to allow for the 'after' variable
+		       to be used/changed: */
+		        reg = new RegExp(".{" + after + "}","g")
+		    el.value = v.replace(reg, function (a, b, c) {
+		        return a + ' ';
+		    });
+		}
+
+		var el = document.getElementById('card_numb');
+		el.addEventListener('keyup', function () {
+		    space(this, 4);
+		});
+
+		function expire(){
+			var phoneField = document.getElementById('printNumber');
+			phoneField.addEventListener('keyup', function(){
+			  var phoneValue = phoneField.value;
+			  var output;
+			  phoneValue = phoneValue.replace(/[^0-9]/g, '');
+			    var area = phoneValue.substr(0, 14);
+			    if (area.length < 15) {
+			        output =  area;
+			    } 
+			    // } else if (area.length == 3 && pre.length < 3) {
+			    //     output = "(" + area + ")" + " " + pre;
+			    // } else if (area.length == 3 && pre.length == 3) {
+			    //     output = "(" + area + ")" + " " + pre + " - "+tel;
+			    // }
+			  phoneField.value = output;
+			  
+			});
+		}
+
+		function dash(){
+			var phoneField = document.getElementById('expireDate');
+			phoneField.addEventListener('keyup', function(){
+			  var phoneValue = phoneField.value;
+			  var output;
+			  phoneValue = phoneValue.replace(/[^0-9]/g, '');
+			    var area = phoneValue.substr(0, 2);
+			    var tel = phoneValue.substr(2, 2);
+			    if (area.length < 3) {
+			        output =  area + '/' + tel;
+			    } 
+			    // } else if (area.length == 3 && pre.length < 3) {
+			    //     output = "(" + area + ")" + " " + pre;
+			    // } else if (area.length == 3 && pre.length == 3) {
+			    //     output = "(" + area + ")" + " " + pre + " - "+tel;
+			    // }
+			  phoneField.value = output;
+			  
+			});
+		}
+
+		function passport(){
+			var passNumber = document.getElementById('passportNumber').value;
+			var letter = passNumber.substr(0, 2);
+			var number = passNumber.substr(2,7);
+			letter = letter.replace(/[^a-z]/g, '')
+			// letter.style.textTransform = "uppercase";
+			number = number.replace(/[^0-9]/g, '');
+			var output;
+			if( letter.length < 3) {
+				output = letter+number;
+			}
+			passportNumber.value = output;
+
+		}
+
+		$(function(){
+			var container = $('.container'), uploadedFile = $('.uploadedFile'),inputFile = $('#file'), img, btn, txt = 'Yuklash', txtAfter = 'Boshqa fayl yuklashsh';
+					
+			if(!container.find('#upload').length){
+				container.find('.input').append('<input type="button" value="'+txt+'" id="upload">');
+				btn = $('#upload');
+				uploadedFile.prepend('<img src="" class="hidden" alt="Uploaded file" id="uploadImg" width="100">');
+				img = $('#uploadImg');
+			}
+					
+			btn.on('click', function(){
+				img.animate({opacity: 0}, 300);
+				inputFile.click();
+			});
+
+			inputFile.on('change', function(e){
+				//container.find('label').html( inputFile.val() );
+				
+				var i = 0;
+				for(i; i < e.originalEvent.srcElement.files.length; i++) {
+					var file = e.originalEvent.srcElement.files[i], 
+						reader = new FileReader();
+
+					reader.onloadend = function(){
+						img.attr('src', reader.result).animate({opacity: 1}, 700);
+					}
+					reader.readAsDataURL(file);
+					img.removeClass('hidden');
+				}
+				
+				btn.val( txtAfter );
+			});
+		});
+
+		$(function(){
+			var container = $('.container'), uploadedFile1 = $('.uploadedFile1'),inputFile1 = $('#file1'), img1, btn1, txt1 = 'Yuklash', txtAfter1 = 'Boshqa fayl yuklash';
+					
+			if(!container.find('#upload1').length){
+				container.find('.input1').append('<input type="button" value="'+txt1+'" id="upload1">');
+				btn1 = $('#upload1');
+				uploadedFile1.prepend('<img src="" class="hidden" alt="Uploaded file" id="uploadImg1" width="100">');
+				img1 = $('#uploadImg1');
+			}
+					
+			btn1.on('click', function(){
+				img1.animate({opacity: 0}, 300);
+				inputFile1.click();
+			});
+
+			inputFile1.on('change', function(e){
+				//container.find('label').html( inputFile.val() );
+				
+				var i = 0;
+				for(i; i < e.originalEvent.srcElement.files.length; i++) {
+					var file = e.originalEvent.srcElement.files[i], 
+						reader = new FileReader();
+
+					reader.onloadend = function(){
+						img1.attr('src', reader.result).animate({opacity: 1}, 700);
+					}
+					reader.readAsDataURL(file);
+					img1.removeClass('hidden');
+				}
+				
+				btn.val( txtAfter );
+			});
+		});
+	</script>
+</html>
